@@ -5,4 +5,3 @@
 </template>
 
 <script src="./form.ts" lang="ts"></script>
-<style src="./form.css" />
