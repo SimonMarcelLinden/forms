@@ -1,0 +1,29 @@
+.form-group {
+  display       : flex;
+  flex-direction: column;
+  align-items   : flex-start;
+  margin-bottom : 1rem;
+}
+
+.form-group label,
+.form-group .form-text,
+.form-group .form-control {
+  display       : block;
+}
+
+.form-group label {
+  margin-bottom : .5rem;
+}
+
+.form-group .form-text,
+.form-group .form-control {
+  width: 100%;
+}
+
+.form-text {
+  margin-top: .25rem;
+}
+.small, small {
+  font-size: 80%;
+  font-weight: 400;
+}

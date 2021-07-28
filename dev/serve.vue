@@ -1,26 +1,18 @@
 <script lang="ts">
-import formGroup from "@/lib-components/form-group/form-group.vue";
-import formInput from "@/lib-components/form-input/form-input.vue";
-// import vButton from"@simon.marcel.linden/buttons/src/lib-components/button.vue";
-
-import { vButton } from "@simon.marcel.linden/buttons";
 
 import Vue from "vue";
-// Uncomment import and local "components" registration if library is not registered globally.
-// import { FormsSample } from '@/entry.esm';
+import lFormGroup from '@/lib-components/form-group/form-group.vue';
+import lFormInput from '@/lib-components/form-input/form-input.vue';
 
 export default Vue.extend({
-  components: { formGroup, formInput, vButton },
+  components: { lFormGroup, lFormInput },
   name: "ServeDev",
-  // components: {
-  //  FormsSample,
-  // }
   data() {
     return {
       inputVal: "John",
       form: {
         email: "jane@example.com",
-        name: "",
+        firstname: "Jane",
         food: "Carrots",
         checked: [],
       },
@@ -41,7 +33,7 @@ export default Vue.extend({
     },
     onFormReset(event: Event) {
       event.preventDefault();
-      // console.log("Reset");
+      this.form.email = '';
     },
   },
 });
@@ -49,6 +41,16 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <h1>Forms</h1>
+    <l-form @reset="onFormReset" @submit="onFormSubmit">
+      <l-form-input id="input-1" type="email" name="email" v-model="form.email" placeholder="Enter email" label="E-mail" required />
+      <l-form-group id="input-group-2" label="Firstname" labelFor="input-2" description="We'll never share your email with anyone else.">
+        <l-form-input id="input-2" type="text" name="firstname" v-model="form.firstname" placeholder="Enter Firstname" required />
+      </l-form-group>
+    </l-form>
+    <pre class="m-0">{{ form }}</pre>
   </div>
 </template>
+
+<style src="@/lib-components/form/form.css" />
+<style src="@/lib-components/form-group/form-group.css" />
+<style src="@/lib-components/form-input/form-input.css" />
