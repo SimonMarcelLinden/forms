@@ -1,2 +1,2 @@
 /* eslint-disable import/prefer-default-export */
-export { default as FormsSample } from './forms-sample.vue';
+export { default as lForm } from './form/form.vue';

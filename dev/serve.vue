@@ -13,6 +13,6 @@ export default Vue.extend({
 
 <template>
   <div id="app">
-    <forms-sample />
+    <l-form />
   </div>
 </template>
